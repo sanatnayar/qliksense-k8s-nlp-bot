@@ -35,19 +35,21 @@
  - How can I learn more about 
 
 ## intent: inputKey
- - [ManifestsRoot] (key)
- - [RotateKeys] (key)
- - [StorageClass] (key)
- - [NameSpace] (key)
- - [Profile] (key)
- - Change attribute [ManifestsRoot] (key)
- - Change attribute [RotateKeys] (key)
- - Change attribute [StorageClass] (key)
- - Change attribute [NameSpace] (key)
- - Change attribute [Profile] (key)
+ - [ManifestsRoot](key)
+ - [RotateKeys](key)
+ - [StorageClass](key)
+ - [NameSpace](key)
+ - [Profile](key)
+ - Change attribute [ManifestsRoot](key)
+ - Change attribute [RotateKeys](key)
+ - Change attribute [StorageClass](key)
+ - Change attribute [NameSpace](key)
+ - Change attribute [Profile](key)
 
  ## intent: inputValue
- - [hi] (value)
+ - [gcp](value)
+ - [aws](value)
+ - [eks](value)
 
 ## intent: setConfig
  - I wish to add to my spec
@@ -111,4 +113,4 @@
 
 
 ## regex:value
-- .*
+- (.*?)

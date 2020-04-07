@@ -9,13 +9,11 @@
   - utter_greet
 * setConfig
   - utter_ask_key
-* inputKey
-  - attribute_form
-  - form{"name": "attribute_form"}
-* inputValue
+* inputKey{"key": "profile"}
   - attribute_form
   - form{"name": "attribute_form"}
   - form{"name": null}
+  
 ## sad path 2
 * greet
   - utter_greet

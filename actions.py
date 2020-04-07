@@ -13,6 +13,7 @@ from typing import Any, Text, Dict, List
 from rasa_sdk import Action, Tracker
 from rasa_sdk.executor import CollectingDispatcher
 from rasa_sdk.forms import FormAction
+from rasa_sdk.events import SlotSet
 
 
 class ActionShowCR(Action):
@@ -72,16 +73,12 @@ class SetAttributeForm(FormAction):
 
         key = tracker.get_slot('key')
         value = tracker.get_slot('value')
-        
+
         setCommand = key+'='+value
         print(setCommand)
         result = subprocess.run(['qliksense','config','set', setCommand] , stdout=subprocess.PIPE)
         dispatcher.utter_message(result.stdout)
 
-        try:
-            subprocess.check_output(['qliksense','config','set', setCommand], stdout=subprocess.PIPE)
-        except subprocess.CalledProcessError as e:
-            print(e.output)
         
 
-        return []
+        return[SlotSet("key", None), SlotSet("value", None)]
