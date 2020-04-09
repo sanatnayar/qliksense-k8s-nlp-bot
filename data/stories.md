@@ -1,8 +1,8 @@
 ## insight path
 * greet
   - utter_greet
-* retrieve{"cluster_element": "CR"}
-  - action_show_CR
+* retrieve
+  - actionInsight
 
 ## addition path
 * greet
@@ -14,6 +14,12 @@
   - form{"name": "attribute_form"}
   - form{"name": null}
   
+## preflight path
+* greet
+  - utter_greet
+* doPreflight
+  - preflightChecks
+
 ## sad path 2
 * greet
   - utter_greet

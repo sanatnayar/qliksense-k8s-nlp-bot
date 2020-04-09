@@ -5,27 +5,25 @@
 - good evening
 - hey
 
+## lookup:cluster_element
+   data/tests/element.txt
 ## intent:retrieve
  - I wanted to see my [CR](cluster_element)
- - Can I see my [CR](cluster_element)
+ - Can I see the [custom resource](cluster_element)
  - Can I see the qliksense operator [CRD](cluster_element)
- - Can I see the qliksense operator [custom_resource_definition](cluster_element)
- - I wanted to see the [spec](cluster_element)
- - I wanted to see my [CR](cluster_element)
  - Can I see a [list](cluster_element) of my contexts
  - I want to see [all](cluster_element) my contexts
  - Show me [all](cluster_element) my configs
- - Can I see the [CR](cluster_element) 
-
-## intent:retrieveCR
- - I wanted to see my CR
- - Can I see my CR
- - I wanted to see the spec
- - I wanted to see my CRi 
- - Can I see a [list](cluster_element) of my contexts
- - I want to see [all](cluster_element) my contexts
- - Show me [all](cluster_element) my configs
- - Can I see the [CR](cluster_element)
+ - Can I see the [spec](cluster_element) 
+ - show me the [deployment spec](cluster_element)
+ - show me the qliksense operator [custom resource definition](cluster_element)
+ - want to see the [CR](cluster_element)
+ - show me the [custom resource](cluster_element)
+ - I want to see the [spec](cluster_element)
+ - show the [CR](cluster_element)
+ - display the [CR](cluster_element)
+ - display the [spec](cluster_element)
+ - show the [custom resource](cluster_element)
 
 
 ## intent:tutorial
@@ -61,6 +59,16 @@
  - i want to change to my spec
  - i want to edit my spec
 
+## intent: doPreflight
+ - check all preflight
+ - do all preflight checks
+ - do all checks before deployment
+ - will qliksense deploy properly?
+ - check application before deploying
+ - check qliksense before deploying
+ - do the [deployments](preflight) preflight check
+ - check [deployment](preflight) preflight
+
 
 ## intent:goodbye
 - bye
@@ -83,28 +91,6 @@
 - no way
 - not really
 
-## intent:mood_great
-- perfect
-- very good
-- great
-- amazing
-- wonderful
-- I am feeling very good
-- I am great
-- I'm good
-
-## intent:mood_unhappy
-- sad
-- very sad
-- unhappy
-- bad
-- very bad
-- awful
-- terrible
-- not very good
-- extremely sad
-- so sad
-
 ## intent:bot_challenge
 - are you a bot?
 - are you a human?
@@ -114,3 +100,26 @@
 
 ## regex:value
 - (.*?)
+
+## synonym:deployments
+- Dep
+- Deployment
+- deployment
+- dep
+
+
+## synonym:CRD
+- custom resource definition
+- Operator CRD
+- operator custom resource definition
+
+## synonym:CR
+- custom resource
+- spec
+- qliksense spec
+- deployment custom resource
+- deployment spec
+- cr
+
+## synonym:all
+- list

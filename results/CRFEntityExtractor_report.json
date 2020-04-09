@@ -1,8 +1,8 @@
 {
   "cluster_element": {
-    "precision": 0.88,
+    "precision": 0.9166666666666666,
     "recall": 1.0,
-    "f1-score": 0.9361702127659575,
+    "f1-score": 0.9565217391304348,
     "support": 22
   },
   "value": {
@@ -12,9 +12,9 @@
     "support": 3
   },
   "preflight": {
-    "precision": 0.6666666666666666,
+    "precision": 1.0,
     "recall": 1.0,
-    "f1-score": 0.8,
+    "f1-score": 1.0,
     "support": 2
   },
   "key": {
@@ -24,21 +24,21 @@
     "support": 10
   },
   "micro avg": {
-    "precision": 0.9024390243902439,
+    "precision": 0.9487179487179487,
     "recall": 1.0,
-    "f1-score": 0.9487179487179488,
+    "f1-score": 0.9736842105263158,
     "support": 37
   },
   "macro avg": {
-    "precision": 0.8866666666666666,
+    "precision": 0.9791666666666666,
     "recall": 1.0,
-    "f1-score": 0.9340425531914893,
+    "f1-score": 0.9891304347826086,
     "support": 37
   },
   "weighted avg": {
-    "precision": 0.9106306306306304,
+    "precision": 0.9504504504504504,
     "recall": 1.0,
-    "f1-score": 0.9512363427257045,
+    "f1-score": 0.9741480611045827,
     "support": 37
   }
 }

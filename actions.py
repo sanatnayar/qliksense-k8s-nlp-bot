@@ -19,7 +19,7 @@ from rasa_sdk.events import SlotSet
 class ActionShowCR(Action):
 
     def name(self) -> Text:
-        return "action_show_CR"
+        return "actionInsight"
 
     def run(self, dispatcher: CollectingDispatcher,
             tracker: Tracker,
@@ -29,18 +29,18 @@ class ActionShowCR(Action):
         print(schema)
         if schema != None:
             schema = schema.lower()
-        if schema == "cr" or schema=="custom resource" or schema == "spec":
+        if schema == "cr":
             result = subprocess.run(['qliksense','config','view'] , stdout=subprocess.PIPE)
             dispatcher.utter_message(result.stdout)
-        elif schema == "crd" or schema=="custom resource definition":
+        elif schema == "crd":
             result = subprocess.run(['qliksense','operator','crd'] , stdout=subprocess.PIPE)
             dispatcher.utter_message(result.stdout)
-        elif schema == "all" or schema=="list":
+        elif schema=="all":
             result = subprocess.run(['qliksense','config','list-contexts'] , stdout=subprocess.PIPE)
             dispatcher.utter_message(result.stdout)
         else:
             dispatcher.utter_message("Sorry I could not understand what you mean")
-        return []
+        return [SlotSet("cluster_element", None)]
 
 
 class SetAttributeForm(FormAction):
@@ -82,3 +82,26 @@ class SetAttributeForm(FormAction):
         
 
         return[SlotSet("key", None), SlotSet("value", None)]
+
+
+class ActionPeformPreflight(Action):
+
+    def name(self) -> Text:
+        return "preflightChecks"
+
+    def run(self, dispatcher: CollectingDispatcher,
+            tracker: Tracker,
+            domain: Dict[Text, Any]) -> List[Dict[Text, Any]]:
+
+        schema = tracker.get_slot("preflight")
+        print(schema)
+        if schema != None:
+            schema = schema.lower()
+            if schema == "deployments":
+                result = subprocess.run(['qliksense','preflight','deployment'] , stdout=subprocess.PIPE)
+                dispatcher.utter_message(result.stdout)
+        else:
+            result = subprocess.run(['qliksense','preflight','all'] , stdout=subprocess.PIPE)
+            dispatcher.utter_message(result.stdout)
+       
+        return [SlotSet("preflight", None)]
